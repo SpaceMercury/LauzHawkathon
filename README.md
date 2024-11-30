@@ -8,18 +8,18 @@ This project will be for time series forecasting. It aims to develop models and 
 
 ## Tasks
 
-- [-] **Define the Problem Statement**
-  - [ ] Clearly outline the objectives and goals of the forecasting project.
+- [ ] **Define the Problem Statement**
+  - [x] Clearly outline the objectives and goals of the forecasting project.
   - [ ] Identify the key metrics for evaluation.
 
-- [ ] **Data Collection**
-  - [ ] Gather historical data relevant to the forecasting problem.
-  - [ ] Ensure data quality and completeness.
+- [x] **Data Collection**
+  - [x] Gather historical data relevant to the forecasting problem.
+  - [x] Ensure data quality and completeness.
 
-- [ ] **Data Preprocessing**
-  - [ ] Handle missing values and outliers.
-  - [ ] Normalize or standardize the data if necessary.
-  - [ ] Split the data into training and testing sets.
+- [x] **Data Preprocessing**
+  - [x] Handle missing values and outliers.
+  - [x] Normalize or standardize the data if necessary.
+  - [x] Split the data into training and testing sets.
 
 - [ ] **Exploratory Data Analysis (EDA)**
   - [ ] Visualize the data to understand trends, seasonality, and patterns.
@@ -45,9 +45,9 @@ This project will be for time series forecasting. It aims to develop models and 
   - [ ] Deploy the best-performing model to a production environment.
   - [ ] Set up a pipeline for continuous monitoring and updating of the model.
 
-- [ ] **Documentation**
-  - [ ] Document the entire process, including data sources, preprocessing steps, model selection, and evaluation results.
-  - [ ] Update the `README.md` file with relevant information and instructions.
+- [x] **Documentation**
+  - [x] Document the entire process, including data sources, preprocessing steps, model selection, and evaluation results.
+  - [x] Update the `README.md` file with relevant information and instructions.
 
 - [ ] **Maintenance**
   - [ ] Monitor the model's performance over time.
