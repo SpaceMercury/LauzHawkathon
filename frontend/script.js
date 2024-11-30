@@ -26,7 +26,7 @@ function parseCSV(data) {
 // Mock data for three linear charts
 // Chart configuration with axis labels
 let graphData = {
-  graph1: {
+  graph1: {                                       // GRAPH 1
     type: "line",
     data: {
       labels: [], // X-axis labels will be dynamically fetched
@@ -69,7 +69,7 @@ let graphData = {
       },
     },
   },
-  graph2: {
+  graph2: {                                       // GRAPH 2
     type: "line",
     data: {
       labels: ["January", "February", "March", "April", "May"],
@@ -112,7 +112,7 @@ let graphData = {
       },
     },
   },
-  graph3: {
+  graph3: {                                      // GRAPH 3
     type: "line",
     data: {
       labels: ["January", "February", "March", "April", "May"],
@@ -157,6 +157,19 @@ let graphData = {
   },
 };
 
+// Messages for each graph
+const graphMessages = {
+  graph1: "Graph 1: BRISTOR Sales - This graph displays the sales of BRISTOR over time. It shows trends and fluctuations in the sales data.",
+  graph2: "Graph 2: Revenue - This graph tracks the revenue generated each month. It helps in understanding the growth and performance of the business.",
+  graph3: "Graph 3: Expenses - This graph illustrates the company's expenses each month. It provides insights into the costs associated with running the business.",
+};
+
+// Function to update the message
+function updateMessage(graphId) {
+  const messageElement = document.getElementById("graphMessage");
+  messageElement.innerHTML = graphMessages[graphId]; // Set the message based on the selected graph
+}
+
 let chart;
 // Fetch and update the chart with CSV data
 fetchCSVData('../clean_data/BRISTOR_Zegoland_all_%.csv').then(csvData => {
@@ -165,20 +178,28 @@ fetchCSVData('../clean_data/BRISTOR_Zegoland_all_%.csv').then(csvData => {
   chart = new Chart(ctx, graphData.graph1); // Initialize the chart with Graph 1 data
 });
 
+// Function to update the description
+function updateDescription(graphId) {
+  document.getElementById("graphDescription").innerHTML = graphDescriptions[graphId];
+}
 
-// Function to handle button clicks
-const buttons = document.querySelectorAll('.graph-btn'); // Select all the graph buttons
-
+// Handle button clicks
+const buttons = document.querySelectorAll('.graph-btn'); // Select all buttons
 buttons.forEach(button => {
   button.addEventListener('click', () => {
-    const graphId = button.id.replace('btn-', ''); // Map the button ID to the graph data ID
+    const graphId = button.id.replace('btn-', ''); // Map button ID to graph ID
 
-    // Update button styles
-    buttons.forEach(btn => btn.classList.remove('active')); // Remove 'active' class from all buttons
-    button.classList.add('active'); // Add 'active' class to the clicked button
-    console.log(graphId)
-    // Update the chart
-    chart.destroy(); // Destroy the existing chart
-    chart = new Chart(ctx, graphData[graphId]); // Create a new chart with the selected data
+    // Update button styles (for active effect)
+    buttons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    // Destroy current chart and create a new one
+    if (chart) {
+      chart.destroy();
+    }
+    chart = new Chart(ctx, graphData[graphId]); // Create chart for the selected graph
+
+    // Update the graph's message
+    updateMessage(graphId); // Update the message below the graph
   });
 });
