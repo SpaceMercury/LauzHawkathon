@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Make it responsive on mobile devices -->
+  <title>Graph Viewer</title> <!-- The title of the web page -->
+  <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include the Chart.js library -->
+</head>
+<body>
+  <div class="container"> <!-- The main container for the content -->
+    <h1>Graph Viewer</h1> <!-- Title displayed on the webpage -->
+    
+    <div class="button-container"> <!-- A container for the buttons -->
+      <button class="graph-btn" id="btn-graph1">Graph 1: Sales</button> <!-- Button for Graph 1 -->
+      <button class="graph-btn" id="btn-graph2">Graph 2: Revenue</button> <!-- Button for Graph 2 -->
+      <button class="graph-btn" id="btn-graph3">Graph 3: Expenses</button> <!-- Button for Graph 3 -->
+    </div>
+    
+    <div class="canvas-container"> <!-- Container for the canvas element -->
+      <canvas id="myChart"></canvas> <!-- Canvas where the charts will be drawn -->
+    </div>
+  </div>
+  <script src="script.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>
