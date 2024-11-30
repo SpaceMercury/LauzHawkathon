@@ -91,3 +91,35 @@ canvas {
   display: block;
   margin-top: 20px;
 }
+
+  
+  .graph-description {
+    margin-top: 20px;
+    font-size: 1.2rem; /* Slightly larger text */
+    font-weight: 500; /* Medium weight for better readability */
+    color: #444; /* Neutral color for the text */
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 15px; /* Add padding around the text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transition: all 0.3s ease; /* Smooth transitions for future animations */
+  }
+  
+  .graph-description p {
+    margin: 0;
+    line-height: 1.5; /* Better line spacing for readability */
+    text-align: center; /* Center-align the text */
+  }
+  
+  #graphMessage {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: #444;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-align: left;
+  }
+
+
