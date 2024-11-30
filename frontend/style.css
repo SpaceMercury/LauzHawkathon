@@ -1,39 +1,40 @@
 body {
-    font-family: Arial, sans-serif; /* Set the font for the webpage */
-    background-color: #f8f9fa; /* Light gray background color */
-    color: #333; /* Text color */
-    text-align: center; /* Center-align the content */
-    padding: 20px; /* Add padding around the page */
-  }
-  
-  .container {
-    max-width: 800px; /* Limit the container width to 800px */
-    margin: auto; /* Center the container horizontally */
-    padding: 20px; /* Add padding inside the container */
-    background: #fff; /* White background for the container */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow around the container */
-    border-radius: 8px; /* Rounded corners for the container */
-  }
-  
-  h1 {
-    margin-bottom: 20px; /* Add margin below the title */
-  }
-  
-  .button-container {
-    display: flex; /* Use flexbox layout for the buttons */
-    justify-content: center; /* Center-align the buttons */
-    gap: 15px; /* Add space between buttons */
-    margin-bottom: 20px; /* Margin below the buttons */
-  }
-  
-  .graph-btn {
-    padding: 10px 20px; /* Padding inside each button */
-    font-size: 16px; /* Set font size for the button text */
-    border-radius: 4px; /* Rounded corners for the buttons */
-    border: 2px solid transparent; /* Border is transparent initially */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: all 0.3s ease; /* Smooth transition for changes */
-  }
+  font-family: 'Montserrat', sans-serif; /* Use a modern font */
+  background-image: url("path/to/background.jpg"); /* Add a background image */
+  background-size: cover; /* Cover the entire background */
+  background-attachment: fixed; /* Make the background static */
+  background-position: center;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5rem; /* Make the title larger */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow to the text */
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.graph-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
   
   .graph-btn.active {
     border-color: transparent; /* Remove the border color when active */
