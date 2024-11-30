@@ -24,23 +24,52 @@ function parseCSV(data) {
 }
 
 // Mock data for three linear charts
+// Chart configuration with axis labels
 let graphData = {
-  graph1: { // Data for Graph 1 (Sales)
+  graph1: {
     type: "line",
     data: {
-      labels: [],
+      labels: [], // X-axis labels will be dynamically fetched
       datasets: [
         {
-          label: "Sales (in $1000)",
-          data: [],
+          label: "BRISTOR Sales",
+          data: [], // Data will be dynamically fetched
           borderColor: "rgba(75, 192, 192, 1)",
           backgroundColor: "rgba(75, 192, 192, 0.2)",
           borderWidth: 2,
         },
       ],
     },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+        },
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: "Time Period", // Label for X-axis
+            font: {
+              size: 16,
+            },
+          },
+        },
+        y: {
+          title: {
+            display: true,
+            text: "Sales Amount (mL)", // Label for Y-axis
+            font: {
+              size: 16,
+            },
+          },
+        },
+      },
+    },
   },
-  graph2: { // Data for Graph 2 (Revenue)
+  graph2: {
     type: "line",
     data: {
       labels: ["January", "February", "March", "April", "May"],
@@ -54,8 +83,36 @@ let graphData = {
         },
       ],
     },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+        },
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: "Months", // X-axis label
+            font: {
+              size: 16,
+            },
+          },
+        },
+        y: {
+          title: {
+            display: true,
+            text: "Revenue Amount ($1000s)", // Y-axis label
+            font: {
+              size: 16,
+            },
+          },
+        },
+      },
+    },
   },
-  graph3: { // Data for Graph 3 (Expenses)
+  graph3: {
     type: "line",
     data: {
       labels: ["January", "February", "March", "April", "May"],
@@ -69,8 +126,37 @@ let graphData = {
         },
       ],
     },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+        },
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: "Months", // X-axis label
+            font: {
+              size: 16,
+            },
+          },
+        },
+        y: {
+          title: {
+            display: true,
+            text: "Expense Amount ($1000s)", // Y-axis label
+            font: {
+              size: 16,
+            },
+          },
+        },
+      },
+    },
   },
 };
+
 let chart;
 // Fetch and update the chart with CSV data
 fetchCSVData('../clean_data/BRISTOR_Zegoland_all_%.csv').then(csvData => {
