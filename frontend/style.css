@@ -1,8 +1,8 @@
 body {
   font-family: 'Montserrat', sans-serif; /* Use a modern font */
   background-image: url("path/to/background.jpg"); /* Add a background image */
-  background-size: cover; /* Cover the entire background */
-  background-attachment: fixed; /* Make the background static */
+  background-size: cover;
+  background-attachment: fixed;
   background-position: center;
   color: #333;
   text-align: center;
@@ -10,22 +10,23 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem; /* Make the title larger */
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow to the text */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .container {
   max-width: 800px;
   margin: auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
+/* Graph buttons */
 .graph-btn {
   padding: 10px 20px;
   font-size: 16px;
@@ -33,29 +34,60 @@ h1 {
   border: 2px solid transparent;
   cursor: pointer;
   transition: all 0.3s ease;
+  background-color: white; /* Default button color */
+  opacity: 1; /* Default full opacity */
 }
 
-  
-  .graph-btn.active {
-    border-color: transparent; /* Remove the border color when active */
-    box-shadow: 0px 0px 15px 5px rgba(75, 192, 192, 0.5); /* Add glow effect around the button (active) */
-  }
-  
-  .graph-btn:nth-child(1).active {
-    box-shadow: 0px 0px 15px 5px rgba(75, 192, 192, 0.5); /* Apply the color glow for Graph 1 button */
-  }
-  
-  .graph-btn:nth-child(2).active {
-    box-shadow: 0px 0px 15px 5px rgba(54, 162, 235, 0.5); /* Apply the color glow for Graph 2 button */
-  }
-  
-  .graph-btn:nth-child(3).active {
-    box-shadow: 0px 0px 15px 5px rgba(255, 99, 132, 0.5); /* Apply the color glow for Graph 3 button */
-  }
-  
-  canvas {
-    max-width: 100%; /* Ensure canvas scales to fit within the container */
-    display: block; /* Make canvas a block-level element */
-    margin-top: 20px; /* Margin on top of the canvas */
-  }
-  
+/* Hover: add glow matching corresponding color */
+.graph-btn:nth-child(1):hover {
+  box-shadow: 0px 0px 15px 5px rgba(75, 192, 192, 0.5); /* Turquoise glow */
+}
+
+.graph-btn:nth-child(2):hover {
+  box-shadow: 0px 0px 15px 5px rgba(54, 162, 235, 0.5); /* Blue glow */
+}
+
+.graph-btn:nth-child(3):hover {
+  box-shadow: 0px 0px 15px 5px rgba(255, 99, 132, 0.5); /* Pink glow */
+}
+
+/* Reduce opacity for all non-hovered buttons */
+.graph-btn:hover,
+.graph-btn:focus {
+  opacity: 1; /* Ensure hovered button is fully visible */
+}
+
+.button-container:hover .graph-btn:not(:hover) {
+  opacity: 0.6; /* Non-hovered buttons become slightly transparent */
+}
+
+/* Active state: change button color */
+.graph-btn.active {
+  background-color: rgba(75, 192, 192, 0.3); /* Default active color */
+  opacity: 1; /* Fully visible */
+}
+
+/* Specific styles for each active button */
+.graph-btn:nth-child(1).active {
+  background-color: rgba(75, 192, 192, 0.3); /* Turquoise when active */
+}
+
+.graph-btn:nth-child(2).active {
+  background-color: rgba(54, 162, 235, 0.3); /* Blue when active */
+}
+
+.graph-btn:nth-child(3).active {
+  background-color: rgba(255, 99, 132, 0.3); /* Pink when active */
+}
+
+/* Reset button glow when not hovered */
+.graph-btn.active:not(:hover) {
+  box-shadow: none; /* Remove glow when not hovered */
+}
+
+/* Canvas styling */
+canvas {
+  max-width: 100%;
+  display: block;
+  margin-top: 20px;
+}
