@@ -8,7 +8,7 @@ This project will be for time series forecasting. It aims to develop models and 
 
 ## Tasks
 
-- [ ] **Define the Problem Statement**
+- [-] **Define the Problem Statement**
   - [ ] Clearly outline the objectives and goals of the forecasting project.
   - [ ] Identify the key metrics for evaluation.
 
