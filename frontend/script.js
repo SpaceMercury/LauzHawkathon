@@ -1,34 +1,23 @@
-
 const ctx = document.getElementById("myChart").getContext("2d"); // Get the 2D rendering context of the canvas
 // Function to read and parse CSV data
 
 // Function to read and parse CSV data
-async function fetchCSVDataMain(url) {
+async function fetchCSVData(url) {
   const response = await fetch(url);
   const data = await response.text();
-  return parseCSV(data, 4, 5);
-}
-async function fetchCSVDataMain2(url) {
-  const response = await fetch(url);
-  const data = await response.text();
-  return parseCSV(data, 4, 9);
-}
-async function fetchCSVDataMain3(url) {
-  const response = await fetch(url);
-  const data = await response.text();
-  return parseCSV(data, 4, 14);
+  return parseCSV(data);
 }
 
-
-function parseCSV(data, x, y) {
+// Function to parse CSV data
+function parseCSV(data) {
   const rows = data.split('\n').slice(1).filter(row => row.trim() !== ""); // Remove header row and empty lines
   const labels = [];
   const values = [];
 
   rows.forEach(row => {
     const cols = row.split(','); // Split each row by comma
-    labels.push(cols[x].trim()); // Assuming the first column is Date (adjust if needed)
-    values.push(parseFloat(cols[y].trim())); // Assuming the second column is Value (adjust if needed)
+    labels.push(cols[4].trim()); // Assuming the first column is Date (adjust if needed)
+    values.push(parseFloat(cols[5].trim())); // Assuming the second column is Value (adjust if needed)
   });
 
   return { labels, values };
@@ -45,7 +34,7 @@ let graphData = {
         {
           label: "BRISTOR Sales",
           data: [], // Data will be dynamically fetched
-          borderColor: "rgba(75, 192, 192, 1)",
+          borderColor: "rgba(204, 0, 255, 0.742)",
           backgroundColor: "rgba(75, 192, 192, 0.2)",
           borderWidth: 2,
         },
@@ -83,12 +72,12 @@ let graphData = {
   graph2: {                                       // GRAPH 2
     type: "line",
     data: {
-      labels: [],
+      labels: ["January", "February", "March", "April", "May"],
       datasets: [
         {
-          label: "Demand Share",
-          data: [],
-          borderColor: "rgba(54, 162, 235, 1)",
+          label: "Revenue (in $1000)",
+          data: [15, 25, 20, 30, 40],
+          borderColor: "rgba(204, 0, 255, 0.742)",
           backgroundColor: "rgba(54, 162, 235, 0.2)",
           borderWidth: 2,
         },
@@ -114,7 +103,7 @@ let graphData = {
         y: {
           title: {
             display: true,
-            text: "Voice Share A ", // Y-axis label
+            text: "Revenue Amount ($1000s)", // Y-axis label
             font: {
               size: 16,
             },
@@ -126,12 +115,12 @@ let graphData = {
   graph3: {                                      // GRAPH 3
     type: "line",
     data: {
-      labels: [],
+      labels: ["January", "February", "March", "April", "May"],
       datasets: [
         {
           label: "Expenses (in $1000)",
-          data: [],
-          borderColor: "rgba(255, 99, 132, 1)",
+          data: [8, 12, 10, 15, 18],
+          borderColor: "rgba(204, 0, 255, 0.742)",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderWidth: 2,
         },
@@ -183,22 +172,10 @@ function updateMessage(graphId) {
 
 let chart;
 // Fetch and update the chart with CSV data
-fetchCSVDataMain('../clean_data/BRISTOR_Zegoland_all_%.csv').then(csvData => {
+fetchCSVData('../clean_data/BRISTOR_Zegoland_all_%.csv').then(csvData => {
   graphData.graph1.data.labels = csvData.labels;
   graphData.graph1.data.datasets[0].data = csvData.values;
-  //chart = new Chart(ctx, graphData.graph1); // Initialize the chart with Graph 1 data
-});
-
-fetchCSVDataMain2('../clean_data/BRISTOR_Zegoland_all_%.csv').then(csvData => {
-  graphData.graph2.data.labels = csvData.labels;
-  graphData.graph2.data.datasets[0].data = csvData.values;
-  //chart = new Chart(ctx, graphData.graph1); // Initialize the chart with Graph 1 data
-});
-
-fetchCSVDataMain3('../clean_data/BRISTOR_Zegoland_all_%.csv').then(csvData => {
-  graphData.graph3.data.labels = csvData.labels;
-  graphData.graph3.data.datasets[0].data = csvData.values;
-  //chart = new Chart(ctx, graphData.graph1); // Initialize the chart with Graph 1 data
+  chart = new Chart(ctx, graphData.graph1); // Initialize the chart with Graph 1 data
 });
 
 
