@@ -15,10 +15,10 @@ const graphData = {
   datasets: [{
     label: "Sales Amount (in mL)",
     data: [20, 40, 60, 80, 100],
-    borderColor: "rgba(75, 192, 192, 1)", // Line color
-    backgroundColor: "rgba(75, 192, 192, 0.2)", // Fill color
+    borderColor: "rgba(204, 0, 255, 0.742)", // Line color
+    backgroundColor: "rgba(54, 162, 235, 0.2)", // Fill color
     borderWidth: 2,
-    fill: true, // Fill the area below the line
+    fill: false, // Fill the area below the line
   }],
 };
 
