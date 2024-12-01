@@ -361,7 +361,7 @@ fetchCSVDataMain5('static/data/BRISTOR_Zegoland_all_%.csv').then(csvData => {
   //chart = new Chart(ctx, graphData.graph1); // Initialize the chart with Graph 1 data
 });
 
-fetchCSVDataMain3('static/data/BRISTOR_Zegoland_all_%.csv').then(csvData => {
+fetchCSVDataMain6('static/data/BRISTOR_Zegoland_all_%.csv').then(csvData => {
   graphData.graph6.data.labels = csvData.labels;
   graphData.graph6.data.datasets[0].data = csvData.values;
   //chart = new Chart(ctx, graphData.graph1); // Initialize the chart with Graph 1 data
