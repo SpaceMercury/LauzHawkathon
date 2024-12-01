@@ -40,21 +40,20 @@
     <h2>More Graphs</h2>
 
     <h4>Input a Value and Run Python Function</h4>
-    <form action="/predict" method="post">
+   <form id="myForm" action="/predict" method="post">
         <label for="inputValue">Enter a value:</label>
-        <input type="text" id="inputValue" name="inputValue" required>
-        <button type="submit">Run Function</button>
+        <input type="number" id="inputValue" name="inputValue" required step="1" min="0" max="100">
+
+        <label for="dropdownValue">Choose an option:</label>
+        <select id="dropdownValue" name="dropdownValue">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+
+        <button class="run-function-button" type="submit">Run Function</button>
     </form>
-
-   
-
-    <div class="canvas-container"> <!-- Container for the new canvas elements -->
-      <canvas id="myNewChart" style="display:none;"></canvas> <!-- Canvas for the new chart -->
-      <!-- Add more canvas elements as needed -->
-    </div>
   </div>
-
-
   <script src="../static/js/script.js"></script>
   <script src="../static/js/interactive.js"></script> <!-- Link to the new interactive JavaScript file -->
 </body>

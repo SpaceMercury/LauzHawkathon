@@ -25,6 +25,9 @@ import random
 @app.route('/predict', methods=['POST'])
 def run_function():
     input_value = request.form['inputValue']
+
+    ## make sure input
+
     rendered_html = render_template('result.html', value=input_value)
     return rendered_html
 
