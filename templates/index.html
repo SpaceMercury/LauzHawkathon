@@ -35,6 +35,14 @@
 
   <div class="container"> <!-- New container for more graphs -->
     <h2>More Graphs</h2>
+
+    <h4>Input a Value and Run Python Function</h4>
+    <form action="/predict" method="post">
+        <label for="inputValue">Enter a value:</label>
+        <input type="text" id="inputValue" name="inputValue" required>
+        <button type="submit">Run Function</button>
+    </form>
+
     <div class="button-container"> <!-- A container for the new buttons -->
       <button class="graph-btn" id="btn-graph4">Graph 4: New Chart</button> <!-- Button for Graph 4 -->
       <!-- Add more buttons as needed -->
