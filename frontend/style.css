@@ -91,9 +91,13 @@ canvas {
   max-width: 100%;
   display: block;
   margin-top: 20px;
-  background-color: #413e3e; /* Set your desired color */
-  border: 2px solid #413e3e; /* Optional: Add a border around the canvas */
+  background-color: #ffffff; /* Set your desired color */
+  border: 2px solid #ffffff; /* Optional: Add a border around the canvas */
   border-radius: 10px; /* Optional: Round the edges of the canvas */
+}
+
+#myChart {
+  box-shadow: 0 0 15px rgba(50, 50, 50, 0.7); /* Creates a cyan halo */
 }
 
   
