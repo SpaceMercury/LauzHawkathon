@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="../static/css/style.css"> <!-- Link to the external CSS file -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include the Chart.js library -->
 </head>
 <body>
@@ -16,7 +16,6 @@
 
     <h2>Graph Analysis</h2>
 
-    
     <div class="button-container"> <!-- A container for the buttons -->
       <button class="graph-btn" id="btn-graph1">Graph 1: BRISTOR Sales</button> <!-- Button for Graph 1 -->
       <button class="graph-btn" id="btn-graph2">Graph 2: Demand Share (% BMS / Total competition)</button> <!-- Button for Graph 2 -->
@@ -33,6 +32,22 @@
     </div>
     <div class="graph-message" id="graphMessage"></div> <!-- ESTO TIENE QUE SER EL MENSAJE DE ABAJO-->
   </div>
-  <script src="script.js"></script> <!-- Link to the external JavaScript file -->
+
+  <div class="container"> <!-- New container for more graphs -->
+    <h2>More Graphs</h2>
+    <div class="button-container"> <!-- A container for the new buttons -->
+      <button class="graph-btn" id="btn-graph4">Graph 4: New Chart</button> <!-- Button for Graph 4 -->
+      <!-- Add more buttons as needed -->
+    </div>
+
+    <div class="canvas-container"> <!-- Container for the new canvas elements -->
+      <canvas id="myNewChart" style="display:none;"></canvas> <!-- Canvas for the new chart -->
+      <!-- Add more canvas elements as needed -->
+    </div>
+  </div>
+
+
+  <script src="../static/js/script.js"></script>
+  <script src="../static/js/interactive.js"></script> <!-- Link to the new interactive JavaScript file -->
 </body>
 </html>
