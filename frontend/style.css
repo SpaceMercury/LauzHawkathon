@@ -121,5 +121,14 @@ canvas {
     border-radius: 5px;
     text-align: left;
   }
+/* Default style for the description box */
+#graph-description {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: white; /* Default background */
+  box-shadow: none; /* No glow by default */
+  transition: box-shadow 0.3s ease; /* Smooth transition for glow changes */
+}
 
 
