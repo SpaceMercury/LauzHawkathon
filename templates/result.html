@@ -11,12 +11,25 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include the Chart.js library -->
 </head>
 <body>
-    <h4>Result of Your Input</h4>
-    <p>You entered: {{ value }}</p>
+  <div class="container">
+    <!-- Title and Subtitle -->
+    <h1 id="graphTitle">Sales Analysis</h1>
+    <h2 id="graphSubtitle">Annual Data Overview</h2>
+
+    <!-- Canvas for Graph -->
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+    <!-- Description -->
+    <div id="graphDescription">
+      This graph shows the sales analysis for the year, demonstrating the fluctuations and growth trends throughout different periods.
+    </div>
+    
+    <!-- Message Box -->
+    <div id="graphMessage"></div>
 
 
-<button type="button" id="goBackHomeButton" onclick="window.location.href='/'">Go Back Home</button>
+  <button type="button" id="goBackHomeButton" onclick="window.location.href='/'">Go Back Home</button>
 
-
+  <script src="../static/js/interactive.js"></script> <!-- Link to the new interactive JavaScript file -->
 </body>
 </html>
