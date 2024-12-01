@@ -16,6 +16,23 @@ def call_function():
     # Return the result as a JSON response
     return jsonify({'result': result})
 
+from flask import send_file
+import matplotlib.pyplot as plt
+import io
+import random
+
+
+@app.route('/predict', methods=['POST'])
+def run_function():
+    input_value = request.form['inputValue']
+    rendered_html = render_template('result.html', value=input_value)
+    return rendered_html
+
+def some_function():
+    # Example of a Python function that you want to run
+    return "Hello, function was successfully run!"
+
+
 
 @app.route('/')
 def index():
