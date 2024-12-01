@@ -293,4 +293,26 @@ form label {
    /* Purple glow */
 }
 
+/* Style for the image */
+#exampleImage {
+  width: 200px; /* Adjust size */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 20px auto; /* Center the image */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(50, 50, 50, 0.7); /* Optional: Add subtle shadow */
+}
+
+/* Style for the text below the image */
+#imageDescription {
+  text-align: center;
+  font-size: 1.2em;
+  color: #444;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px; /* Rounded corners */
+  background-color: rgb(255, 255, 255); /* Light halo background */
+  box-shadow: 0px 0px 15px 5px rgba(190, 43, 187, 0.2); /* Glowing halo */
+}
+
 
