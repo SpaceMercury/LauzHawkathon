@@ -204,5 +204,42 @@ buttons.forEach(button => {
 
     // Update the graph's message
     updateMessage(graphId); // Update the message below the graph
+
+    function updateMessageGlow(graphId) {
+      const messageBox = document.getElementById("graphMessage"); // Select the message box
+    
+      // Remove any existing glow classes
+      messageBox.classList.remove("graph1", "graph2", "graph3");
+    
+      // Add the class corresponding to the selected graph
+      if (graphId === "graph1") {
+        messageBox.classList.add("graph1"); // Turquoise glow for Graph 1
+      } else if (graphId === "graph2") {
+        messageBox.classList.add("graph2"); // Blue glow for Graph 2
+      } else if (graphId === "graph3") {
+        messageBox.classList.add("graph3"); // Pink glow for Graph 3
+      }
+    }
+  
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const graphId = button.id.replace('btn-', ''); // Map button ID to graph ID
+    
+        // Update button styles (for active effect)
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    
+        // Destroy current chart and create a new one
+        if (chart) {
+          chart.destroy();
+        }
+        chart = new Chart(ctx, graphData[graphId]); // Create chart for the selected graph
+    
+        // Update the graph's message and glow
+        updateMessage(graphId); // Update the message below the graph
+        updateMessageGlow(graphId); // Dynamically apply the glow
+      });
+    });
+    
   });
 });
