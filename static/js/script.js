@@ -53,7 +53,7 @@ function parseCSV(data, x, y) {
 // Mock data for three linear charts
 // Chart configuration with axis labels
 let graphData = {
-  graph1: {                                       // GRAPH 1
+  graph1: {                                      // GRAPH 1
     type: "line",
     data: {
       labels: [], // X-axis labels will be dynamically fetched
@@ -96,7 +96,7 @@ let graphData = {
       },
     },
   },
-  graph2: {                                       // GRAPH 2
+  graph2: {                                      // GRAPH 2
     type: "line",
     data: {
       labels: [],
@@ -139,7 +139,7 @@ let graphData = {
       },
     },
   },
-  graph3: {                                      // GRAPH 3
+  graph3: {                                     // GRAPH 3
     type: "line",
     data: {
       labels: [],
@@ -182,7 +182,7 @@ let graphData = {
       },
     },
   },
-  graph4: {                                       // GRAPH 4
+  graph4: {                                      // GRAPH 4
     type: "line",
     data: {
       labels: [],
@@ -225,7 +225,7 @@ let graphData = {
       },
     },
   },
-  graph5: {                                       // GRAPH 5
+  graph5: {                                      // GRAPH 5
     type: "line",
     data: {
       labels: [],
@@ -268,7 +268,7 @@ let graphData = {
       },
     },
   },
-  graph6: {                                       // GRAPH 6
+  graph6: {                                      // GRAPH 6
     type: "line",
     data: {
       labels: [],
