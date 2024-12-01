@@ -25,16 +25,19 @@ import random
 @app.route('/predict', methods=['POST'])
 def run_function():
     input_value = request.form['inputValue']
+    model_option = request.form['dropdownValue']
 
+    print(model_option)
     ## make sure input
+
+    model_function_ex(input_value, model_option)
 
     rendered_html = render_template('result.html', value=input_value)
     return rendered_html
 
-def some_function():
+def model_function_ex(months, model_option):
     # Example of a Python function that you want to run
     return "Hello, function was successfully run!"
-
 
 
 @app.route('/')

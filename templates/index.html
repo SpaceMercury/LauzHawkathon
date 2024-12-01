@@ -41,14 +41,14 @@
 
     <h4>Input a Value and Run Python Function</h4>
    <form id="myForm" action="/predict" method="post">
-        <label for="inputValue">Enter a value:</label>
+        <label for="inputValue">Enter the number of months to predict:</label>
         <input type="number" id="inputValue" name="inputValue" required step="1" min="0" max="100">
 
-        <label for="dropdownValue">Choose an option:</label>
+        <label for="dropdownValue">Choose a Model To Predict:</label>
         <select id="dropdownValue" name="dropdownValue">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+            <option value="option1">Univariate XGBoost</option>
+            <option value="option2">Multivariate XGBoost 2</option>
+            <option value="option3">Third Model</option>
         </select>
 
         <button class="run-function-button" type="submit">Run Function</button>
