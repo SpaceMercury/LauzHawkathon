@@ -54,6 +54,15 @@ h1 {
 .graph-btn:nth-child(3):hover {
   box-shadow: 0px 0px 15px 5px rgba(190,43, 187, 1); /* Pink glow */
 }
+.graph-btn:nth-child(4):hover {
+  box-shadow: 0px 0px 15px 5px rgba(190,43, 187, 1); /* Pink glow */
+}
+.graph-btn:nth-child(5):hover {
+  box-shadow: 0px 0px 15px 5px rgba(190,43, 187, 1); /* Pink glow */
+}
+.graph-btn:nth-child(6):hover {
+  box-shadow: 0px 0px 15px 5px rgba(190,43, 187, 1); /* Pink glow */
+}
 
 /* Reduce opacity for all non-hovered buttons */
 .graph-btn:hover,
@@ -81,6 +90,18 @@ h1 {
 }
 
 .graph-btn:nth-child(3).active {
+  background-color: rgba(190,43, 187, 1); /* Pink when active */
+}
+
+.graph-btn:nth-child(4).active {
+  background-color: rgba(190,43, 187, 1); /* Pink when active */
+}
+
+.graph-btn:nth-child(5).active {
+  background-color: rgba(190,43, 187, 1); /* Pink when active */
+}
+
+.graph-btn:nth-child(6).active {
   background-color: rgba(190,43, 187, 1); /* Pink when active */
 }
 
@@ -164,6 +185,23 @@ canvas {
    /* Purple glow */
 }
 
+/* Glow for Graph 4 */
+#graphMessage.graph4 {
+  box-shadow: 0px 0px 15px 5px rgba(190,43, 187, 1);
+   /* Purple glow */
+}
+
+/* Glow for Graph 5 */
+#graphMessage.grap5 {
+  box-shadow: 0px 0px 15px 5px rgba(190,43, 187, 1);
+   /* Purple glow */
+}
+
+/* Glow for Graph 6 */
+#graphMessage.graph6 {
+  box-shadow: 0px 0px 15px 5px rgba(190,43, 187, 1);
+   /* Purple glow */
+}
 
 
 
