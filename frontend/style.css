@@ -135,6 +135,21 @@ canvas {
   margin: 0;
   color: #333; /* Default text color */
 }
+/* Glow for Graph 1 */
+#graphMessage.graph1 {
+  box-shadow: 0px 0px 15px 5px rgba(75, 192, 192, 0.5); /* Turquoise glow */
+}
+
+/* Glow for Graph 2 */
+#graphMessage.graph2 {
+  box-shadow: 0px 0px 15px 5px rgba(54, 162, 235, 0.5); /* Blue glow */
+}
+
+/* Glow for Graph 3 */
+#graphMessage.graph3 {
+  box-shadow: 0px 0px 15px 5px rgba(255, 99, 132, 0.5); /* Pink glow */
+}
+
 
 
 

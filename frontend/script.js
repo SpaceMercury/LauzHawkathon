@@ -169,6 +169,29 @@ function updateMessage(graphId) {
   const messageElement = document.getElementById("graphMessage");
   messageElement.innerHTML = graphMessages[graphId]; // Set the message based on the selected graph
 }
+// Function to apply the glow effect to the description box
+function updateDescriptionGlow(graphId) {
+  const descriptionBox = document.getElementById("graph-description"); // Select the description box
+  const descriptionText = document.getElementById("graph-description-text"); // Select the description text
+
+  // Remove any existing glow classes
+  descriptionBox.classList.remove("graph1", "graph2", "graph3");
+
+  // Update the description text
+  descriptionText.innerHTML = graphDescriptions[graphId]; // Set the text for the selected graph
+
+  // Add this to make the description box glow
+  updateDescriptionGlow(graphId); 
+
+  // Apply the glow based on the selected graph
+  if (graphId === "graph1") {
+    descriptionBox.style.boxShadow = "0px 0px 15px 5px rgba(75, 192, 192, 0.5)"; // Turquoise glow
+  } else if (graphId === "graph2") {
+    descriptionBox.style.boxShadow = "0px 0px 15px 5px rgba(54, 162, 235, 0.5)"; // Blue glow
+  } else if (graphId === "graph3") {
+    descriptionBox.style.boxShadow = "0px 0px 15px 5px rgba(255, 99, 132, 0.5)"; // Pink glow
+  }
+}
 
 let chart;
 // Fetch and update the chart with CSV data
@@ -178,10 +201,12 @@ fetchCSVData('../clean_data/BRISTOR_Zegoland_all_%.csv').then(csvData => {
   chart = new Chart(ctx, graphData.graph1); // Initialize the chart with Graph 1 data
 });
 
+
 // Function to update the description
 function updateDescription(graphId) {
   document.getElementById("graphDescription").innerHTML = graphDescriptions[graphId];
 }
+
 
 // Handle button clicks
 const buttons = document.querySelectorAll('.graph-btn'); // Select all buttons
@@ -201,5 +226,43 @@ buttons.forEach(button => {
 
     // Update the graph's message
     updateMessage(graphId); // Update the message below the graph
+
+
+    // Dynamically apply the glow
+    function updateMessageGlow(graphId) {
+      const messageBox = document.getElementById("graphMessage"); // Select the message box
+    
+      // Remove any existing glow classes
+      messageBox.classList.remove("graph1", "graph2", "graph3");
+    
+      // Add the class corresponding to the selected graph
+      if (graphId === "graph1") {
+        messageBox.classList.add("graph1"); // Turquoise glow for Graph 1
+      } else if (graphId === "graph2") {
+        messageBox.classList.add("graph2"); // Blue glow for Graph 2
+      } else if (graphId === "graph3") {
+        messageBox.classList.add("graph3"); // Pink glow for Graph 3
+      }
+    }
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const graphId = button.id.replace('btn-', ''); // Map button ID to graph ID
+    
+        // Update button styles (for active effect)
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    
+        // Destroy current chart and create a new one
+        if (chart) {
+          chart.destroy();
+        }
+        chart = new Chart(ctx, graphData[graphId]); // Create chart for the selected graph
+    
+        // Update the graph's message and glow
+        updateMessage(graphId); // Update the message below the graph
+        updateMessageGlow(graphId); // Dynamically apply the glow
+      });
+    });
+    
   });
 });
