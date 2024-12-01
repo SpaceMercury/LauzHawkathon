@@ -62,7 +62,7 @@ let graphData = {
         x: {
           title: {
             display: true,
-            text: "Time Period", // Label for X-axis
+            text: "Months", // Label for X-axis
             font: {
               size: 16,
             },
@@ -71,7 +71,7 @@ let graphData = {
         y: {
           title: {
             display: true,
-            text: "Sales Amount (mL)", // Label for Y-axis
+            text: "Sales Amount (mg)", // Label for Y-axis
             font: {
               size: 16,
             },
@@ -114,7 +114,7 @@ let graphData = {
         y: {
           title: {
             display: true,
-            text: "Voice Share A ", // Y-axis label
+            text: "Demand Share A", // Y-axis label
             font: {
               size: 16,
             },
@@ -129,7 +129,7 @@ let graphData = {
       labels: [],
       datasets: [
         {
-          label: "Expenses (in $1000)",
+          label: "Voice Share A",
           data: [],
           borderColor: "rgba(204, 0, 255, 0.742)",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -157,7 +157,7 @@ let graphData = {
         y: {
           title: {
             display: true,
-            text: "Expense Amount ($1000s)", // Y-axis label
+            text: "Voice Share", // Y-axis label
             font: {
               size: 16,
             },
